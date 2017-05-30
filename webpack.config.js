@@ -7,13 +7,7 @@ const extractCSSFromSASS = new ExtractTextPlugin('index.css')
 
 module.exports = {
   entry: {
-    main: './src/main.js',
-    setup: './src/setup.js'
-    // vendor: [
-    //   'vue',
-    //   'vue-router',
-    //   'vuex'
-    // ]
+    main: './src/main.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -44,7 +38,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.sass$/,
         loader: extractCSSFromSASS.extract(['css', 'sass'])
       },
       {
