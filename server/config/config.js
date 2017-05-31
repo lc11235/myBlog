@@ -1,4 +1,5 @@
 module.exports = {
-    mongodb: 'mongodb://localhost:9000/vueblog',
-    devPort: 7000
+    mongodb: 'mongodb://localhost:9000/blog',
+    devPort: 7000,
+    port: 80
 };
