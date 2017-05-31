@@ -31,7 +31,8 @@
         "editor.md":"^1.5.0",
         "jsonwebtoken":"^7.4.1",
         "vue":"^2.3.3",
-        "vue-server-renderer":"^2.3.3"
+        "vue-server-renderer":"^2.3.3",
+        "lru-cache":"^4.0.2"
     },
     "devDependencies": {
         "autoprefixer":"^7.1.1",

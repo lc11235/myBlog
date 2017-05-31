@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-//const compression = require('compression');
+const compression = require('compression');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -27,7 +27,7 @@ const app = express();
 const resolve = file => path.resolve(__dirname, file);
 
 app.set('port', (process.env.port || config.devPort));
-//app.use(compression());
+app.use(compression());
 app.use(favicon(resolve('../dist/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
