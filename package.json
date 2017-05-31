@@ -28,7 +28,10 @@
         "axios":"^0.16.1",
         "github-markdown-css":"^2.6.0",
         "animate.css":"^3.5.2",
-        "editor.md":"^1.5.0"
+        "editor.md":"^1.5.0",
+        "jsonwebtoken":"^7.4.1",
+        "vue":"^2.3.3",
+        "vue-server-renderer":"^2.3.3"
     },
     "devDependencies": {
         "autoprefixer":"^7.1.1",

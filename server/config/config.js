@@ -1,5 +1,5 @@
 module.exports = {
     mongodb: 'mongodb://localhost:9000/blog',
-    devPort: 7000,
+    devPort: 8080,
     port: 80
 };

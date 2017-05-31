@@ -1,38 +1,41 @@
+// 基本服务器的引用，包括文件操作模块，路径处理模块
+// express框架，favicon处理模块，html文件的解析模块
+// 和cookie解析模块
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-const compression = require('compression');
+//const compression = require('compression');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const db = require('./dbModel/model.js');
-const resolve = file => path.resolve(__dirname, file);
+
+// api的路由
 const cmsAPI = require('./api/cmsAPI.js');
-const frontAPI = require('./api/frontAPI.js');
-const app = express();
+//const frontAPI = require('./api/frontAPI.js');
+
+// 主页面的路由
+const mainPageRouter = require('./router/router.js');
+
+// 配置以及工具函数的引用
 const config = require('./config/config.js');
-const cryptoMd5 = require('./tool/cryptoMd5.js');
+const crypto = require('./utils/crypto.js');
+
+// 引入express框架
+const app = express();
+
+// 构造一个小的函数，来取得文件的实际路径
+const resolve = file => path.resolve(__dirname, file);
 
 app.set('port', (process.env.port || config.devPort));
-app.use(compression());
+//app.use(compression());
 app.use(favicon(resolve('../dist/favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/dist', express.static(resolve('../dist')));
-app.use(api);
-
-app.post('/api/setup', (req, res) => {
-    let {name, pwd} = req.body;
-    pwd = cryptoMd5(pwd);
-    new db.User({name, pwd})
-    .save()
-    .then(() => {
-        res.status(200).end();
-        db.initialized = true;
-    })
-    .catch(() => res.status(500).end());
-});
+app.use(cmsAPI);
+//app.use(frontAPI);
+app.use(mainPageRouter);
 
 app.get('*', (req, res) => {
     const html = fs.readFileSync(resolve('../index.html'), 'utf-8');
