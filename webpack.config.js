@@ -1,9 +1,9 @@
-const path = require('path')
-const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const extractCSSFromVue = new ExtractTextPlugin('styles.css')
-const extractCSSFromSASS = new ExtractTextPlugin('index.css')
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const extractCSSFromVue = new ExtractTextPlugin('styles.css');
+const extractCSSFromSASS = new ExtractTextPlugin('index.css');
 
 module.exports = {
   entry: {
@@ -92,7 +92,7 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#source-map';
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -108,4 +108,4 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true
     })
   ])
-}
+};
