@@ -1,2 +1,2 @@
 # myBlog
-myBlog based on Vue
+myBlog based on Vue.js and nuxt.js
