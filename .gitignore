@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-.vscode/
-.vs/
-=======
 # dependencies
 node_modules
 
@@ -19,4 +15,6 @@ build
 
 # vscode
 .vscode
->>>>>>> 69ae5141e484252ab0396b48ac29f73a014a204e
+
+# vs
+.vs
