@@ -1,2 +1,22 @@
+<<<<<<< HEAD
 .vscode/
 .vs/
+=======
+# dependencies
+node_modules
+
+# logs
+npm-debug.logs
+
+# Nuxt build
+.nuxt
+
+# Nust generate
+dist
+
+# Backpack build
+build
+
+# vscode
+.vscode
+>>>>>>> 69ae5141e484252ab0396b48ac29f73a014a204e
