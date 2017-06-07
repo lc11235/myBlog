@@ -3,7 +3,7 @@ import { Router } from 'express';
 const router = Router();
 
 // Mock Users
-const user = [
+const users = [
     {name: 'Alexandre'},
     {name: 'Sebastien'}
 ];

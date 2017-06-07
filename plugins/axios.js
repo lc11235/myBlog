@@ -1,9 +1,9 @@
-import * as axios from 'axios';
+import * as axios from 'axios'
 
-let options = {};
+let options = {}
 // The server-side needs a full url to works
-if(process.SERVER_BUILD){
-    options.baseURL = `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 8080}`;
+if (process.SERVER_BUILD) {
+  options.baseURL = `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 8080}`
 }
 
-export default axios.create(options);
+export default axios.create(options)
